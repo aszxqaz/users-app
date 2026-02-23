@@ -1,17 +1,21 @@
 import express from "express";
 import { UserRepository } from "../domain/user.repository";
-import { createLoginExpressHandler } from "../express/auth/login.handler";
-import { meExpressHandler } from "../express/auth/me.handler";
-import { createRegisterExpressHandler } from "../express/auth/register.handler";
-import { createGetUserFromTokenHandler } from "../handler/auth/get-user-from-token.handler";
-import { createLoginHandler } from "../handler/auth/login.handler";
-import { createRegisterHandler } from "../handler/auth/register.handler";
+import {
+    createLoginExpressHandler,
+    createRegisterExpressHandler,
+    meExpressHandler,
+} from "../express/auth";
+import {
+    createGetUserFromTokenHandler,
+    createLoginHandler,
+    createRegisterHandler,
+} from "../handler/auth";
+import { requestBodyMiddleware } from "../middleware";
 import {
     authGuard,
     createAuthMiddleware,
     reverseAuthGuard,
 } from "../middleware/auth.middleware";
-import { requestBodyMiddleware } from "../middleware/validation.middleware";
 import { LoginRequestBody, RegisterRequestBody } from "../schemas/auth";
 import { PasswordService, TokenSerivce } from "../service";
 
