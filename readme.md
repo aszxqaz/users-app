@@ -11,3 +11,7 @@ Password: **password**
 
 Email: **user@usersapp.ru**
 Password: **password**
+
+### Скриншот
+
+![Screenshot](screenshot.jpg)
