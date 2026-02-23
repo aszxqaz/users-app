@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import { User } from "../domain/user.model";
-import { GetUserFromTokenHandler } from "../handler/auth/get-user-from-token.handler";
+import { User } from "../domain";
+import { GetUserFromTokenHandler } from "../handler";
 
 declare module "express" {
     export interface Request {
@@ -22,10 +22,8 @@ export function createAuthMiddleware(h: GetUserFromTokenHandler) {
         const authHeader = req.headers["authorization"];
         const token = authHeader?.match(/^Bearer (.+)$/)?.[1];
 
-        console.log(token);
         if (token) {
             const result = await h({ token });
-            console.log("result");
             if ("user" in result) {
                 req.user = result.user;
             }
@@ -50,7 +48,6 @@ export function reverseAuthGuard(
     res: Response,
     next: NextFunction,
 ) {
-    console.log(req.user);
     if (req.user) {
         return res
             .status(StatusCodes.CONFLICT)
@@ -66,7 +63,6 @@ export function sameUserOrAdminGuard(
     next: NextFunction,
 ) {
     const userId = req.params["userId"];
-    console.log(req.user);
     if (typeof userId == "string" && +userId === req.user?.id) return next();
     if (req.user?.role == "admin") return next();
     return res

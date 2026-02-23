@@ -1,9 +1,5 @@
-import { User } from "../../domain/user.model";
-import { UserRepository } from "../../domain/user.repository";
-import {
-    TokenSerivce,
-    TokenServiceVerifyError,
-} from "../../service/token.service";
+import { User, UserRepository } from "../../domain";
+import { TokenSerivce, TokenServiceVerifyError } from "../../service";
 import { Handler } from "../types";
 
 export enum GetUserFromTokenHandlerError {

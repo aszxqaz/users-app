@@ -1,5 +1,5 @@
 import { Expose, plainToInstance, Transform } from "class-transformer";
-import { User as DomainUser } from "../domain/user.model";
+import { User as DomainUser } from "../domain";
 import { formatToDDMMYYYY } from "./utils";
 
 export class User {

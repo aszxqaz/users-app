@@ -1,6 +1,5 @@
-import { User } from "../../domain/user.model";
-import { UserRepository } from "../../domain/user.repository";
-import { PasswordService } from "../../service/password.service";
+import { User, UserRepository } from "../../domain";
+import { PasswordService } from "../../service";
 import { Handler } from "../types";
 
 export enum RegisterHandlerError {

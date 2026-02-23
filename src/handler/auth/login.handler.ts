@@ -1,7 +1,6 @@
-import { UserRepository } from "../../domain/user.repository";
-import { User } from "../../schemas/user.model";
-import { PasswordService } from "../../service/password.service";
-import { TokenSerivce } from "../../service/token.service";
+import { UserRepository } from "../../domain";
+import { User } from "../../schemas";
+import { PasswordService, TokenSerivce } from "../../service";
 import { Handler } from "../types";
 
 export enum LoginHandlerError {

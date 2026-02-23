@@ -1,5 +1,5 @@
-import { UserRepository } from "../../domain/user.repository";
-import { User } from "../../schemas/user.model";
+import { UserRepository } from "../../domain";
+import { User } from "../../schemas";
 import { Handler } from "../types";
 
 export type ListUsersHandlerResponse = {

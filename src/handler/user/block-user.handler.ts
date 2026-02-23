@@ -1,4 +1,4 @@
-import { UserRepository } from "../../domain/user.repository";
+import { UserRepository } from "../../domain";
 import { Handler } from "../types";
 
 export enum BlockUserHandlerError {
