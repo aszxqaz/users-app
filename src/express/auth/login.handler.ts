@@ -1,11 +1,7 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-
-import {
-    LoginHandler,
-    LoginHandlerError,
-} from "../../handler/auth/login.handler";
-import { LoginRequestBody } from "../../schemas/auth/login.dto";
+import { LoginHandler, LoginHandlerError } from "../../handler";
+import { LoginRequestBody } from "../../schemas";
 
 const MESSAGE_AUTH_FAILED = "Неверный почтовый адрес или пароль";
 const MESSAGE_LOGIN_BLOCKED = "Вход запрещен - пользователь заблокирован";

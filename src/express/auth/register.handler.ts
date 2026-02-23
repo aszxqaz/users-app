@@ -1,12 +1,7 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-
-import {
-    RegisterHandler,
-    RegisterHandlerError,
-} from "../../handler/auth/register.handler";
-import { RegisterRequestBody } from "../../schemas/auth/register.dto";
-import { User } from "../../schemas/user.model";
+import { RegisterHandler, RegisterHandlerError } from "../../handler";
+import { RegisterRequestBody, User } from "../../schemas";
 
 const MESSAGE_EMAIL_OCCUPIED = "Почтовый адрес уже занят";
 

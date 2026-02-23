@@ -1,9 +1,6 @@
 import { Request, Response } from "express";
-import {
-    GetUserHandler,
-    GetUserHandlerError,
-} from "../../handler/user/get-user.handler";
-import { UserParams } from "../../schemas/user.params";
+import { GetUserHandler, GetUserHandlerError } from "../../handler";
+import { UserParams } from "../../schemas";
 import { MESSAGE_USER_NOT_FOUND } from "../messages";
 
 export function createGetUserExpressHandler(h: GetUserHandler) {

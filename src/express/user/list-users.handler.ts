@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-
-import { ListUsersHandler } from "../../handler/user/list-users.handler";
+import { ListUsersHandler } from "../../handler";
 
 export function createListUsersExpressHandler(h: ListUsersHandler) {
     return async function (_: Request, res: Response) {

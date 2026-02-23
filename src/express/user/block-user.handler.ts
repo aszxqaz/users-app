@@ -1,10 +1,7 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import {
-    BlockUserHandler,
-    BlockUserHandlerError,
-} from "../../handler/user/block-user.handler";
-import { UserParams } from "../../schemas/user.params";
+import { BlockUserHandler, BlockUserHandlerError } from "../../handler";
+import { UserParams } from "../../schemas";
 import { MESSAGE_USER_NOT_FOUND } from "../messages";
 
 export function createBlockUserExpressHandler(
