@@ -5,17 +5,9 @@ import {
     createRegisterExpressHandler,
     meExpressHandler,
 } from "../express/auth";
-import {
-    createGetUserFromTokenHandler,
-    createLoginHandler,
-    createRegisterHandler,
-} from "../handler/auth";
+import { createLoginHandler, createRegisterHandler } from "../handler/auth";
 import { requestBodyMiddleware } from "../middleware";
-import {
-    authGuard,
-    createAuthMiddleware,
-    reverseAuthGuard,
-} from "../middleware/auth.middleware";
+import { authGuard, reverseAuthGuard } from "../middleware/auth.middleware";
 import { LoginRequestBody, RegisterRequestBody } from "../schemas/auth";
 import { PasswordService, TokenSerivce } from "../service";
 
@@ -37,9 +29,6 @@ export function createAuthRouter(
 
     authRouter.post(
         "/login",
-        createAuthMiddleware(
-            createGetUserFromTokenHandler(tokenService, userRepository),
-        ),
         reverseAuthGuard,
         requestBodyMiddleware(LoginRequestBody),
         createLoginExpressHandler(
