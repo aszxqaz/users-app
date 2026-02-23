@@ -90,6 +90,13 @@ paths:
               schema:
                 type: object
                 $ref: "#/components/schemas/LoginResponseBody"
+        "401":
+          description: Неверный почтовый адрес или пароль
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/Error"
         "403":
           description: Ошибка доступа
           content:
