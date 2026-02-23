@@ -10,7 +10,6 @@ import { seed } from "./seeder";
 import { BcryptPasswordService, JwtTokenService } from "./service";
 
 async function main() {
-    console.log(config);
     const userRepository = new PrismaUserRepository(
         new PrismaClient({
             adapter: new PrismaPg({ connectionString: config.databaseUrl }),
